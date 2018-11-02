@@ -1,11 +1,5 @@
 ---
 # tasks file for apigee-opdk-settings-region
-
-- name: Determine whether host is in Region 1
-  set_fact:
-    region: 'dc-1'
-  when: groups['dc-1'] is defined and inventory_hostname in groups['dc-1']
-
 - name: Determine whether host is in Region 2
   set_fact:
     region: 'dc-2'
@@ -15,6 +9,36 @@
   set_fact:
     region: 'dc-3'
   when: groups['dc-3'] is defined and inventory_hostname in groups['dc-3']
+
+- name: Determine whether host is in Region 4
+  set_fact:
+    region: 'dc-4'
+  when: groups['dc-4'] is defined and inventory_hostname in groups['dc-4']
+
+- name: Determine whether host is in Region 5
+  set_fact:
+    region: 'dc-5'
+  when: groups['dc-5'] is defined and inventory_hostname in groups['dc-5']
+
+- name: Determine whether host is in Region 6
+  set_fact:
+    region: 'dc-6'
+  when: groups['dc-6'] is defined and inventory_hostname in groups['dc-6']
+
+- name: Determine whether host is in Region 7
+  set_fact:
+    region: 'dc-7'
+  when: groups['dc-7'] is defined and inventory_hostname in groups['dc-7']
+
+- name: Determine whether host is in Region 8
+  set_fact:
+    region: 'dc-8'
+  when: groups['dc-8'] is defined and inventory_hostname in groups['dc-8']
+
+- name: Determine whether host is in Region 9
+  set_fact:
+    region: 'dc-9'
+  when: groups['dc-9'] is defined and inventory_hostname in groups['dc-9']
 
 - name: Set default region if not set
   set_fact:

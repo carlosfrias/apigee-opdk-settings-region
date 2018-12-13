@@ -56,8 +56,8 @@
 
 - name: Add region to cache
   cache:
-    key: "{{ item.region }}"
-    value: "{{ item.region_num }}"
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
   with_items:
   - { key: "region", value: "{{ region }}" }
   - { key: "region_num", value: "{{ region_num }}" }

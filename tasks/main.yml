@@ -50,4 +50,13 @@
     key: "region"
     value: "{{ region }}"
 
+- name: Split region
+  set_fact:
+    region_split: "{{ region | split('-') }}"
+
+- name: Add region_num to cache
+  cache:
+    key: "region_num"
+    value: "{{ region_split[1] }}"
+  when: region_split | length > 1
 

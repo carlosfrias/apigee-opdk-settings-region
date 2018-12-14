@@ -60,5 +60,5 @@
     value: "{{ item.value }}"
   with_items:
   - { key: "region", value: "{{ region }}" }
-  - { key: "region_num", value: "{{ region_num }}" }
+  - { key: "region_num", value: "{{ region_num | default('1') }}" }
 

@@ -61,7 +61,7 @@
     cacheable: yes
     region: 'dc_1'
     region_num: '1'
-  when: region is not defined or region | trim | length == 0
+  when: region is not defined
 
 
 

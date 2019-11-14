@@ -1,5 +1,12 @@
 ---
 # tasks file for apigee-opdk-settings-region
+
+- name: Set default region if not set
+  set_fact:
+    cacheable: yes
+    region: 'dc_1'
+    region_num: '1'
+
 - name: Determine whether host is in Region 2
   set_fact:
     cacheable: yes
@@ -55,13 +62,6 @@
     region: 'dc_9'
     region_num: '9'
   when: groups['dc_9'] is defined and inventory_hostname in groups['dc_9']
-
-- name: Set default region if not set
-  set_fact:
-    cacheable: yes
-    region: 'dc_1'
-    region_num: '1'
-  when: region is not defined
 
 
 
